@@ -12,9 +12,11 @@ function doGet(e) {
     var newRow = sheet.getLastRow() + 1;						
     var rowData = [];
     var Curr_Date = new Date();
-    //rowData[0] = Curr_Date; // Date in column A
-    var Curr_Time = Utilities.formatDate(Curr_Date, "Asia/Bangkok", 'yyyy-MM-dd HH:mm:ss');
-    rowData[1] = Curr_Time; // Time in column B
+     var Curr_Date2 = Utilities.formatDate(Curr_Date, "Asia/Bangkok", 'yyyy-MM-dd');
+    rowData[1] = Curr_Date2; // Time in column B
+
+    var Curr_Time = Utilities.formatDate(Curr_Date, "Asia/Bangkok", 'HH:mm:ss');
+    rowData[2] = Curr_Time; // Time in column C
     for (var param in e.parameter) {
       Logger.log('In for loop, param=' + param);
       var value = stripQuotes(e.parameter[param]);
