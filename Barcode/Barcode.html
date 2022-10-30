@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Barcode Generator</title>
+<link rel="stylesheet" href = "Barcode.css">
+</head>
+<body>
+    <div>Barcode Generator</div>
+    <input type = "text"  placeholder="Please to Click Button" disabled/>
+    <button onclick="generate()">Generator Barcode</button>
+
+ <svg id = "barcode" class="barcode"
+  jsbarcode-format="upc"
+  jsbarcode-value="123456789012"
+  jsbarcode-textmargin="0"
+  jsbarcode-fontoptions="bold"
+  >
+</svg>
+
+ <script src = "https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/barcodes/JsBarcode.code128.min.js"></script>
+<center><script>
+JsBarcode(".barcode","154879").init();
+    function generate(){
+        var val = document.querySelector("input").value;
+        if(val == ""){
+            val = Math.floor(100000 + Math.random() * 900000);
+        }
+  
+        JsBarcode(".barcode",val).init();
+    }
+</script></center>
+
+</body>
+</html>
