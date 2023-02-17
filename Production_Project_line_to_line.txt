@@ -1,0 +1,7 @@
+Project Production 
+
+TX -> RXD
+RX -> TXD
+RTS -> EN
+IO0 -> DTR
+GND -> GND
